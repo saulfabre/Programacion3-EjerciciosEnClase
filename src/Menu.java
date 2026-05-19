@@ -41,7 +41,7 @@ public class Menu {
                     break;
 
                 case 4:
-                    System.out.print("-> IMC Paciente: ");
+                    System.out.print("-> Nombre Paciente: ");
                     String nombreDetIMC = scanner.nextLine();
 
                     paciente = sistemaMedico.buscarPacienteRegistrado(nombreDetIMC);
