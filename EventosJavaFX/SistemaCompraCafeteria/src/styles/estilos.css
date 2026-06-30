@@ -1,0 +1,26 @@
+.root {
+
+    -fx-background-color: linear-gradient(to bottom, #0b1d3a, #132f5b);
+}
+
+.contenedor-formulario {
+
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.386), 8, 0, 0, 3);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+
+}
+
+.button {
+
+    -fx-text-fill: white;
+    -fx-background-color: rgba(5, 1, 59, 0.332);
+}
+
+.combo-box .list-cell {
+
+    -fx-text-fill: white;
+    -fx-background-color: rgba(5, 1, 59, 0.332);
+
+}
