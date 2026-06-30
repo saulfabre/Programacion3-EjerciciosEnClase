@@ -5,55 +5,61 @@
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
 
-<VBox xmlns="http://javafx.com/javafx/21"
+<BorderPane xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controller.ConversorMonedasController"
-            spacing="15"
-            alignment="CENTER">
-    
+            fx:controller="controller.ConversorMonedasController">
+
+    <center>
+        <VBox id="contenedor"
+              spacing="15"
+              alignment="CENTER">
+
             <Label fx:id="lblTitulo"
                    text="Conversor de Monedas"/>
-            
+
             <Label fx:id="lblMonto"
                    text="Monto en pesos dominicanos"/>
 
             <TextField fx:id="tfMonto"
                        promptText="0.00"
                        onKeyPressed="#ejecutarConversionEnter"/>
-            
+
             <Label fx:id="lblMonedaDestino"
-                       text="Moneda destino"/>
-            
+                   text="Moneda destino"/>
+
             <ComboBox fx:id="cbMonedas"
-                          promptText="Seleccione una moneda">
+                      promptText="Seleccione una moneda">
 
-                    <items>
-                        <FXCollections fx:factory="observableArrayList">
-                            <String fx:value="USD"/>
-                            <String fx:value="EUR"/>
-                        </FXCollections>
-                    </items>
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="USD"/>
+                        <String fx:value="EUR"/>
+                    </FXCollections>
+                </items>
 
-                </ComboBox>
+            </ComboBox>
 
-    <HBox spacing="15" alignment="CENTER">
+            <HBox spacing="15" alignment="CENTER">
 
-            <Button fx:id="btnConvertir"
-                    text="Convertir"
-                    onAction="#convertirMoneda"
-                    onMouseEntered="#mouseEntrandoConvertir"
-                    onMouseExited="#mouseSaliendoConvertir"/>
-            
-            <Button fx:id="btnLimpiar"
-                    text="Limpiar"
-                    onAction="#limpiar"/>
-    </HBox>
+                <Button fx:id="btnConvertir"
+                        text="Convertir"
+                        onAction="#convertirMoneda"
+                        onMouseEntered="#mouseEntrandoConvertir"
+                        onMouseExited="#mouseSaliendoConvertir"/>
+
+                <Button fx:id="btnLimpiar"
+                        text="Limpiar"
+                        onAction="#limpiar"/>
+
+            </HBox>
+
             <Label fx:id="lblResultado"
                    text="Resultado:"/>
 
             <Label fx:id="lblEstado"
                    text="Esperando información..."/>
-</VBox>
-            
 
+        </VBox>
+    </center>
 
+</BorderPane>
