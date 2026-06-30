@@ -1,8 +1,12 @@
 package controller;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 
 public class ConversorMonedasController {
 
@@ -19,10 +23,11 @@ public class ConversorMonedasController {
     private Label lblEstado;
 
     @FXML
-    public void convertirMoneda() {
+    private void convertirMoneda() {
 
         if (tfMonto.getText().isEmpty()) {
             lblEstado.setText("Debe ingresar un monto.");
+            return;
         }
 
         double monto;
@@ -51,7 +56,36 @@ public class ConversorMonedasController {
             resultado = monto / 64.00;
         }
 
-        lblResultado.setText("Resultado: " + resultado);
+        lblResultado.setText("Resultado: " + String.format("%.2f", resultado));
         lblEstado.setText("Conversión realizada correctamente.");
+    }
+
+    @FXML
+    private void ejecutarConversionEnter(KeyEvent event) {
+
+        if (event.getCode() == KeyCode.ENTER) {
+            convertirMoneda();
+        }
+    }
+
+    @FXML
+    private void limpiar() {
+
+        tfMonto.clear();
+        cbMonedas.getSelectionModel().clearSelection();
+        lblResultado.setText("");
+        lblEstado.setText("Esperando información...");
+    }
+
+    @FXML
+    private void mouseEntrandoConvertir(MouseEvent event) {
+        
+        lblEstado.setText("Presione para realizar la conversión.");
+    }
+
+    @FXML
+    private void mouseSaliendoConvertir(MouseEvent event) {
+
+        lblEstado.setText("Esperando información...");
     }
 }
