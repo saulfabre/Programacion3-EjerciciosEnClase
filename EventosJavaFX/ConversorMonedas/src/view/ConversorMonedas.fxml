@@ -15,10 +15,11 @@
                    text="Conversor de Monedas"/>
             
             <Label fx:id="lblMonto"
-                   Text="Monto en pesos dominicanos"/>
+                   text="Monto en pesos dominicanos"/>
 
             <TextField fx:id="tfMonto"
-                       promptText="0.00"/>
+                       promptText="0.00"
+                       onKeyPressed="#ejecutarConversionEnter"/>
             
             <Label fx:id="lblMonedaDestino"
                        text="Moneda destino"/>
@@ -39,10 +40,13 @@
 
             <Button fx:id="btnConvertir"
                     text="Convertir"
-                    onAction="#convertirMoneda"/>
+                    onAction="#convertirMoneda"
+                    onMouseEntered="#mouseEntrandoConvertir"
+                    onMouseExited="#mouseSaliendoConvertir"/>
             
             <Button fx:id="btnLimpiar"
-                    text="Limpiar"/>
+                    text="Limpiar"
+                    onAction="#limpiar"/>
     </HBox>
             <Label fx:id="lblResultado"
                    text="Resultado:"/>
