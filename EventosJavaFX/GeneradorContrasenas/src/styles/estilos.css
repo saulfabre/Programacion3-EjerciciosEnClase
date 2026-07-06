@@ -1,0 +1,90 @@
+.titulo-principal {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.contenedor-titulo-principal {
+
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+    -fx-background-radius: 12 12 0 0;
+}
+
+.label-formulario {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.checkbox-formulario {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 14px;
+}
+
+.btn-generar {
+
+    -fx-background-color: #FFA800;
+    -fx-font-family: "Segoe UI";
+    -fx-text-fill: white;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 14px;
+}
+
+.btn-limpiar {
+
+    -fx-background-color: white;
+    -fx-border-color: #d9d9d9;
+    -fx-border-radius: 4;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 14px;
+}
+
+.label-contrasena-generada {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.label-resultado {
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 14px;
+    -fx-text-fill: gray;
+}
+
+.contenedor-formulario {
+
+    -fx-background-color: white;
+}
+
+.contenedor-resultado {
+
+    -fx-background-color: white;
+    -fx-border-color: #d9d9d9;
+    -fx-border-width: 1 0 0 0;
+    -fx-background-radius: 0 0 12 12;
+
+}
+
+.contenedor-principal-formulario {
+    
+    -fx-border-color: #d9d9d9;
+    -fx-border-width: 1;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+}
+
+.contenedor-final {
+
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+    -fx-border-color: #d9d9d9;
+    -fx-border-width: 1;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+}
+
+
