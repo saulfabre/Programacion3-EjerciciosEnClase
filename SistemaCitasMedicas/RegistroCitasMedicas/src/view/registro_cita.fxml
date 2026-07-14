@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" stylesheets="@../../../../Programacion3-RegistroPaquetesDestinos-SaulFabre/src/styles/estilos.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegistroCitaController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Consultar paquetes" />
+                  <MenuItem mnemonicParsing="false" text="Registrar destino" />
+                  <MenuItem mnemonicParsing="false" text="Consultar destinos" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox prefHeight="574.0" prefWidth="600.0" spacing="8.0" stylesheets="@../styles/estilos.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="TOP_RIGHT" prefHeight="39.0" prefWidth="520.0" spacing="18.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="64.0" prefWidth="64.0" styleClass="layout-logo">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Downloads/catholic-hospital-building-svgrepo-com.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="50.0" prefWidth="309.0" spacing="4.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="207.0" styleClass="lbl-titulo" text="Registro de Citas" />
+                        <Label alignment="TOP_LEFT" prefHeight="18.0" prefWidth="318.0" styleClass="lbl-subtitulo" text="Registra una cita cuando lo necesites." />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+               </padding>
+            </HBox>
+            <VBox prefHeight="333.0" prefWidth="520.0" spacing="16.0" styleClass="layout-formulario">
+               <children>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="132.0" styleClass="lbl-formulario" text="Código de la cita" />
+                        <TextField fx:id="tfCodigoCita" minHeight="-Infinity" prefHeight="30.0" prefWidth="324.0" promptText="A001" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="132.0" styleClass="lbl-formulario" text="Nombre paciente" />
+                        <TextField fx:id="tfNombrePaciente" minHeight="-Infinity" prefHeight="30.0" prefWidth="324.0" promptText="Juan Jose Perez" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="132.0" styleClass="lbl-formulario" text="Cédula paciente" />
+                        <TextField fx:id="tfCedulaPaciente" minHeight="-Infinity" prefHeight="30.0" prefWidth="324.0" promptText="402-XXXXX-7" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="132.0" styleClass="lbl-formulario" text="Teléfono paciente" />
+                        <TextField fx:id="tfTelefonoPaciente" minHeight="-Infinity" prefHeight="30.0" prefWidth="324.0" promptText="809-587-7713" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="20.0" prefWidth="472.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="132.0" styleClass="lbl-formulario" text="Hora de la cita" />
+                        <TextField fx:id="tfHoraCita" minHeight="-Infinity" prefHeight="30.0" prefWidth="324.0" promptText="4:00 PM" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="472.0" styleClass="contenedor-progreso">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox spacing="20.0">
+                     <children>
+                        <ComboBox fx:id="cbMedico" prefWidth="150.0" promptText="Médico" />
+                        <ComboBox fx:id="cbEspecialidad" prefWidth="144.0" promptText="Especialidad" />
+                        <ComboBox fx:id="cbEstado" prefWidth="150.0" promptText="Estado" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="40.0">
+                     <children>
+                        <DatePicker fx:id="dpFecha" />
+                     </children>
+                  </HBox>
+                  <TextArea fx:id="taMotivoConsulta" minHeight="-Infinity" prefHeight="73.0" prefWidth="472.0" promptText="Motivo de consulta" />
+                  <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="42.0" prefWidth="436.0" spacing="18.0">
+                     <children>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#guardarCita" prefHeight="36.0" prefWidth="150.0" styleClass="btn-guardar" text="Guardar en archivo" />
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="36.0" prefWidth="160.0" styleClass="btn-limpiar" text="Limpiar " />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="18.0" left="24.0" right="24.0" top="18.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="2.0" />
+               </VBox.margin>
+            </VBox>
+            <HBox alignment="CENTER_LEFT" minHeight="-Infinity" prefHeight="38.0" prefWidth="520.0" styleClass="layout-estado">
+               <children>
+                  <Label fx:id="lblEstado" styleClass="lbl-estado" text="Esperando información..." />
+               </children>
+               <padding>
+                  <Insets left="12.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="8.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="25.0" left="40.0" right="40.0" top="22.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>
