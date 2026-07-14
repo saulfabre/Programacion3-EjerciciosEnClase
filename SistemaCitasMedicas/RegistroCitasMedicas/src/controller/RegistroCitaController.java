@@ -6,12 +6,13 @@ import java.time.LocalTime;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import model.Cita;
 import utils.ArchivoUtils;
 
@@ -71,60 +72,70 @@ public class RegistroCitaController {
 
         if (tfCodigoCita.getText().isBlank()) {
 
+            mostrarAviso("Es obligatorio ingresar un código de cita.");
             lblEstado.setText("Es obligatorio ingresar un código de cita.");
             return;
         }
 
         else if (tfNombrePaciente.getText().isBlank()) {
 
+            mostrarAviso("Es obligatorio ingresar un nombre de paciente.");
             lblEstado.setText("Es obligatorio ingresar un nombre de paciente.");
             return;
         }
 
         else if (tfCedulaPaciente.getText().isBlank()) {
 
+            mostrarAviso("Es obligatorio ingresar una cédula de paciente.");
             lblEstado.setText("Es obligatorio ingresar una cédula de paciente.");
             return;
         }
 
         else if (tfTelefonoPaciente.getText().isBlank()) {
 
+            mostrarAviso("Es obligatorio ingresar un teléfono de paciente.");
             lblEstado.setText("Es obligatorio ingresar un teléfono de paciente.");
             return;
         }
 
         else if (tfHoraCita.getText().isBlank()) {
 
+            mostrarAviso("Es obligatorio ingresar una hora de cita.");
             lblEstado.setText("Es obligatorio ingresar una hora de cita.");
             return;
         }
 
         else if (cbMedico.getValue() == null) {
 
+            mostrarAviso("Debe seleccionar un médico.");
             lblEstado.setText("Debe seleccionar un médico.");
             return;
         }
 
         else if (cbEspecialidad.getValue() == null) {
 
+            mostrarAviso("Debe seleccionar una especialidad.");
             lblEstado.setText("Debe seleccionar una especialidad.");
             return;
         }
 
         else if (cbEstado.getValue() == null) {
 
+            mostrarAviso("Debe seleccionar un estado.");
             lblEstado.setText("Debe seleccionar un estado.");
             return;
         }
 
         else if (dpFecha.getValue() == null) {
 
+            mostrarAviso("Debe seleccionar una fecha.");
             lblEstado.setText("Debe seleccionar una fecha.");
             return;
         }
 
         else if (taMotivoConsulta.getText().isBlank()) {
 
+            mostrarAviso(("Debe ingresar el motivo de consulta."));
             lblEstado.setText("Debe ingresar el motivo de consulta.");
             return;
         }
@@ -146,6 +157,7 @@ public class RegistroCitaController {
 
                 if (cita.getCodigo() == codigo) {
 
+                    mostrarAviso("El codigo de la cita ya existe.");
                     lblEstado.setText("El código de la cita ya existe.");
                     return;
                 }
@@ -167,11 +179,57 @@ public class RegistroCitaController {
                     cbEstado.getValue()
                 ));
 
+            mostarInformacion("Cita registrada correctamente.");
+
             lblEstado.setText("Cita registrada correctamente.");
 
         } catch (NumberFormatException | DateTimeException e) {
 
+            mostrarError("Formato de dato inválido.");
+
             lblEstado.setText("Formato de dato inválido.");
         }
     }   
+
+    @FXML
+    private void mostrarError(String mensaje) {
+
+        Alert alerta = new Alert(AlertType.ERROR);
+
+        alerta.setTitle("Error");
+
+        alerta.setHeaderText(null);
+
+        alerta.setContentText(mensaje);
+
+        alerta.showAndWait();
+    }
+
+    @FXML
+    private void mostarInformacion(String mensaje) {
+
+        Alert alerta = new Alert(AlertType.INFORMATION);
+
+        alerta.setTitle("Información");
+
+        alerta.setHeaderText(null);
+
+        alerta.setContentText(mensaje);
+
+        alerta.showAndWait();
+    }
+
+    @FXML
+    private void mostrarAviso(String mensaje) {
+
+        Alert alerta = new Alert(AlertType.WARNING);
+
+        alerta.setTitle("Aviso");
+
+        alerta.setHeaderText(null);
+
+        alerta.setContentText(mensaje);
+
+        alerta.showAndWait();
+    }
 }
