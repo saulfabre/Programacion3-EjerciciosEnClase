@@ -1,8 +1,10 @@
 package controller;
 
 import java.time.DateTimeException;
+import java.time.LocalDate;
 import java.time.LocalTime;
 
+import exception.CitaDuplicadaException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -15,6 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import model.Cita;
 import utils.ArchivoUtils;
+import utils.Navegacion;
 
 public class RegistroCitaController {
 
@@ -133,6 +136,13 @@ public class RegistroCitaController {
             return;
         }
 
+        else if (dpFecha.getValue().isBefore(LocalDate.now())) {
+
+            mostrarAviso("La fecha es menor que la actual.");
+            lblEstado.setText("La fecha es menor que la actual.");
+            return;
+        }
+
         else if (taMotivoConsulta.getText().isBlank()) {
 
             mostrarAviso(("Debe ingresar el motivo de consulta."));
@@ -152,15 +162,26 @@ public class RegistroCitaController {
             
             ObservableList<Cita> citas = FXCollections.observableArrayList(ArchivoUtils.consultarCitas());
 
+            try {
 
             for (Cita cita : citas) {
 
                 if (cita.getCodigo() == codigo) {
 
-                    mostrarAviso("El codigo de la cita ya existe.");
-                    lblEstado.setText("El código de la cita ya existe.");
-                    return;
+                    throw new CitaDuplicadaException("El código de la cita ya existe.");
                 }
+
+                    else if (cita.getNombreMedico().equals(cbMedico.getValue()) && cita.getFecha().equals(dpFecha.getValue()) && cita.getHora().equals(hora)) {
+
+                        throw new CitaDuplicadaException("Espacio ocupado.");
+                    }
+                }
+
+            } catch (CitaDuplicadaException e) {
+
+                mostrarAviso(e.getMessage());
+                lblEstado.setText(e.getMessage());
+                return;
             }
 
             ArchivoUtils.registrarCita(
@@ -190,6 +211,28 @@ public class RegistroCitaController {
             lblEstado.setText("Formato de dato inválido.");
         }
     }   
+
+
+    @FXML
+    private void limpiarRegistro() {
+
+        tfCodigoCita.clear();
+        tfNombrePaciente.clear();
+        tfCedulaPaciente.clear();
+        tfTelefonoPaciente.clear();
+        tfHoraCita.clear();
+        cbMedico.setValue(null);;
+        cbEspecialidad.setValue(null);
+        cbEstado.setValue(null);
+        dpFecha.setValue(null);
+        taMotivoConsulta.clear();
+    }
+
+    @FXML
+    private void abrirCitas() {
+
+        Navegacion.abrirVentana("/view/consulta_cita.fxml", "Citas");
+    }
 
     @FXML
     private void mostrarError(String mensaje) {

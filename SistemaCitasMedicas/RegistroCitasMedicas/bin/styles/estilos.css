@@ -64,56 +64,6 @@
     -fx-border-width: 0.2;
 }
 
-.contenedor-list-view {
-
-    -fx-border-color: white;
-    -fx-border-radius: 12;
-    -fx-background-color: white;
-    -fx-background-radius: 12;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 5, 0.2, 0, 2);
-}
-
-.list-cell {
-
-    -fx-font-family: "Segoe UI";
-    -fx-font-size: 14px;
-}
-
-.contenedor-list-view .list-cell:filled:selected {
-
-    -fx-background-color: #ffb84d;
-    -fx-background-radius: 4;
-}
-
-.contenedor-consulta-destinos {
-
-    -fx-background-color: white;
-    -fx-background-radius: 12;
-}
-
-.label-destinos-registrados {
-
-    -fx-font-family: "Segoe UI";
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #ffb84d;
-}
-
-.cb-destinos {
-
-    -fx-background-color: white;
-    -fx-border-color: rgb(227, 227, 227);
-    -fx-border-radius: 4;
-    -fx-font-family: "Segoe UI";
-    -fx-font-size: 14px;
-}
-
-.progress-bar {
-
-    -fx-accent: #ffb84d;
-    -fx-background-radius: 6;
-}
-
 .table-view {
 
     -fx-border-color: rgb(230, 230, 230);
@@ -126,12 +76,12 @@
 
 .table-row-cell:selected {
 
-    -fx-background-color: #ffb84d;
+    -fx-background-color: #8c9249;
     -fx-text-fill: white;
 }
 
 .table-view .column-header{
-    -fx-background-color: #ffb84d;
+    -fx-background-color: #8c9249;
     -fx-background-radius: 4;
 }
 

@@ -10,7 +10,7 @@ public class Navegacion {
 
         try {
 
-        FXMLLoader loader = new FXMLLoader(Navegacion.class.getResource(""));
+        FXMLLoader loader = new FXMLLoader(Navegacion.class.getResource(rutaFXML));
 
         Stage stage = new Stage();
 

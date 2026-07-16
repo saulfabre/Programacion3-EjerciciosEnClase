@@ -22,9 +22,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="Archivo">
             <items>
-              <MenuItem mnemonicParsing="false" text="Consultar paquetes" />
-                  <MenuItem mnemonicParsing="false" text="Registrar destino" />
-                  <MenuItem mnemonicParsing="false" text="Consultar destinos" />
+              <MenuItem mnemonicParsing="false" onAction="#abrirCitas" text="Consultar citas" />
             </items>
           </Menu>
         </menus>
@@ -108,7 +106,7 @@
                   <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="42.0" prefWidth="436.0" spacing="18.0">
                      <children>
                         <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#guardarCita" prefHeight="36.0" prefWidth="150.0" styleClass="btn-guardar" text="Guardar en archivo" />
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="36.0" prefWidth="160.0" styleClass="btn-limpiar" text="Limpiar " />
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#limpiarRegistro" prefHeight="36.0" prefWidth="160.0" styleClass="btn-limpiar" text="Limpiar " />
                      </children>
                   </HBox>
                </children>

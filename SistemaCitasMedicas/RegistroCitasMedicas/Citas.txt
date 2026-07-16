@@ -1,0 +1,3 @@
+1;a;1;1;Jose Lopez;Pediatra;2026-07-16;04:30;a;Programada
+2;q;3;4;Jose Lopez;Pediatra;2026-07-16;04:30;jdj;Programada
+17;Juan Jose;13;8095;Jose Lopez;Ginecologia;2026-07-16;04:35;djdj;Atendida
