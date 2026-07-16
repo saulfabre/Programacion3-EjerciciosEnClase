@@ -1,3 +1,6 @@
-1;a;1;1;Jose Lopez;Pediatra;2026-07-16;04:30;a;Programada
-2;q;3;4;Jose Lopez;Pediatra;2026-07-16;04:30;jdj;Programada
-17;Juan Jose;13;8095;Jose Lopez;Ginecologia;2026-07-16;04:35;djdj;Atendida
+1;Juanito Fernandez;4021234567;8095877719;Juan Perez;Pediatra;2026-07-16;04:30;Dolor;Programada
+2;Jose Fermin;40987651;809771381;Maria Altagracia;Dermatologia;2026-07-16;09:50;Nauseas;Atendida
+3;Ricardo Perez;40987651;809771381;Jose Lopez;Pediatra;2026-07-25;09:50;Mareos;Cancelada
+4;Maria Jimenez;40294874967;8057493717;Juan Perez;Pediatra;2026-07-30;14:55;Dolorcito;Programada
+5;Rosa Maria;402948574967;80574983717;Maria Altagracia;Dermatologia;2026-07-21;16:55;Dolorcito grande;Cancelada
+6;Pedro;402948574967;805749837417;Juan Perez;Ginecologia;2026-07-17;04:55;Dolorcito grande mayor;Atendida

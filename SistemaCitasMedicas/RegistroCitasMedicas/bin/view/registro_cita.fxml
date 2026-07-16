@@ -31,13 +31,13 @@
    <center>
       <VBox prefHeight="574.0" prefWidth="600.0" spacing="8.0" stylesheets="@../styles/estilos.css" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="TOP_RIGHT" prefHeight="39.0" prefWidth="520.0" spacing="18.0">
+            <HBox alignment="CENTER" prefHeight="39.0" prefWidth="520.0" spacing="18.0">
                <children>
                   <HBox alignment="CENTER" prefHeight="64.0" prefWidth="64.0" styleClass="layout-logo">
                      <children>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="48.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" translateX="5.0">
                            <image>
-                              <Image url="@../../../../../../Downloads/catholic-hospital-building-svgrepo-com.png" />
+                              <Image url="@../../../../../../Downloads/hospital-chart-style-s-svgrepo-com.png" />
                            </image>
                         </ImageView>
                      </children>
